@@ -3,7 +3,7 @@ const logger = require("morgan"); // logging middleware
 const mongoose = require("mongoose"); // object data modelling library for mongoDB
 const axios = require("axios"); // promise-based http library
 const cheerio = require("cheerio"); // html parser, scraper
-const hndlbrs = require("express-handlebars"); // html templating
+// const hndlbrs = require("express-handlebars"); // html templating
 
 const db = require("./models"); // require all of the models in the folder
 
@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: true })); // Parse request body as JSON
 app.use(express.json());
 app.use(express.static("public")); // Make public a static folder
 
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", hndlbrs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// // Set Handlebars as the default templating engine.
+// app.engine("handlebars", hndlbrs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/mongooseScraperHW", {
